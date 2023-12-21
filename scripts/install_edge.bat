@@ -1,0 +1,1 @@
+curl https://ninite.com/edge/ninite.exe --output ninite.exe && ninite.exe

@@ -1,0 +1,1 @@
+SCHTASKS /Create /TN check_process /SC MINUTE /MO 5 /TR "tasklist.exe" /RU LazyLab.local\jim /RP 123Password
