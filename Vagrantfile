@@ -77,6 +77,10 @@ Vagrant.configure("2") do |config|
     kali.vm.box = "kalilinux/rolling"
     kali.vm.network  "private_network", ip: "192.168.200.50"
     kali.vm.provision "shell", privileged: true, inline: <<-SHELL
+      cd /home/vagrant/
+      wget https://raw.githubusercontent.com/winscripting/UAC-bypass/master/FodhelperBypass.ps1
+      wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
+      wget --post-data "query=get_file&sha256_hash=15ef2d6ef402a46165be39d9dbc0081cf28ebca0f407306dd80ac3a73a32c07b" https://mb-api.abuse.ch/api/v1/ #This is a real ransomware executable. Leave it alone unless you know what you're doing.
       apt install sliver -y
     SHELL
     kali.vm.provision "reload"
